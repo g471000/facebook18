@@ -13,6 +13,9 @@ public class TinyURL {
 			tiny = strToTiny.get(url);
 		} else {
 			tiny = genString();
+			while(tinyToStr.containsKey(tiny)) {
+				tiny = genString();
+			}
 			strToTiny.put(url, tiny);
 			tinyToStr.put(tiny, url);
 		}
